@@ -2,6 +2,8 @@ package com.mrol.funnySMS;
 
 import com.mrol.funnySMS.controller.SMSPanelController;
 
+import javax.swing.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Илья
@@ -12,7 +14,18 @@ import com.mrol.funnySMS.controller.SMSPanelController;
 public class FunnySMS {
 
     public static void main(String[] args){
-        SMSPanelController smsPanelController = new SMSPanelController();
-        smsPanelController.getView();
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            SMSPanelController smsPanelController = new SMSPanelController();
+            smsPanelController.showView();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (InstantiationException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
     }
 }

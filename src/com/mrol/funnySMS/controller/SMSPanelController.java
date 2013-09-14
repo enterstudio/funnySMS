@@ -3,6 +3,8 @@ package com.mrol.funnySMS.controller;
 import com.mrol.funnySMS.swing.SMSPanel;
 import com.mrol.funnySMS.swing.View;
 
+import javax.swing.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Илья
@@ -13,10 +15,14 @@ import com.mrol.funnySMS.swing.View;
 public class SMSPanelController {
     private SMSPanel smsPanel;
 
-    public View getView(){
+    public void showView(){
         if (smsPanel == null){
             this.smsPanel = new SMSPanel(this);
         }
-        return this.smsPanel;
+        JFrame frame = new JFrame("funnySMS");
+        frame.add(smsPanel);
+        frame.setVisible(true);
+        frame.setBounds(400, 400, 250, 210);
+
     }
 }

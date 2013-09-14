@@ -38,12 +38,42 @@ public class SMSPanel extends JPanel implements View {
         this.phoneTextField = new JTextField();
         this.senderLabel = new JLabel("Отправитель:");
         this.senderTextField = new JTextField();
-        this.msgTextArea = new JTextArea();
+        this.msgTextArea = new JTextArea(3, 15);
         this.sendButton = new JButton("Отправить");
     }
 
     private void layoutComponents(){
-
+        add(this.phoneLabel,
+                new GridBagConstraints(0, 0, 1, 1, 1, 1,
+                        GridBagConstraints.CENTER,
+                        GridBagConstraints.HORIZONTAL,
+                        new Insets(5, 5, 5, 5), 0, 0));
+        add(this.phoneTextField,
+                new GridBagConstraints(1, 0, 1, 1, 1, 1,
+                        GridBagConstraints.CENTER,
+                        GridBagConstraints.HORIZONTAL,
+                        new Insets(5, 5, 5, 5), 0, 0));
+        add(this.senderLabel,
+                new GridBagConstraints(0, 1, 1, 1, 1, 1,
+                        GridBagConstraints.CENTER,
+                        GridBagConstraints.HORIZONTAL,
+                        new Insets(5, 5, 5, 5), 0, 0));
+        add(this.senderTextField,
+                new GridBagConstraints(1, 1, 1, 1, 1, 1,
+                        GridBagConstraints.CENTER,
+                        GridBagConstraints.HORIZONTAL,
+                        new Insets(5, 5, 5, 5), 0, 0));
+        JScrollPane scrollPane = new JScrollPane(this.msgTextArea);
+        add(scrollPane,
+                new GridBagConstraints(0, 2, 2, 2, 1, 1,
+                        GridBagConstraints.CENTER,
+                        GridBagConstraints.HORIZONTAL,
+                        new Insets(5, 5, 5, 5), 0, 0));
+        add(this.sendButton,
+                new GridBagConstraints(1, 4, 1, 1, 1, 1,
+                        GridBagConstraints.CENTER,
+                        GridBagConstraints.HORIZONTAL,
+                        new Insets(5, 5, 5, 5), 0, 0));
     }
 
     private void addListeners(){
