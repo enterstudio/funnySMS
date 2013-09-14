@@ -44,4 +44,11 @@ public class Message {
     public void setMessage(String message) {
         this.message = message;
     }
+
+//    public String getRequest(){
+//        String request = "'sms_phone' : sms_phone,'sms_sender' : sms_sender,'sms_msg' : sms_msg,'sms_send.x' : '23','sms_send.y' : '10'";
+//    }
+
+
+
 }

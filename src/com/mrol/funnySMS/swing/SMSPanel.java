@@ -4,6 +4,8 @@ import com.mrol.funnySMS.controller.SMSPanelController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created with IntelliJ IDEA.
@@ -77,6 +79,13 @@ public class SMSPanel extends JPanel implements View {
     }
 
     private void addListeners(){
-
+        this.sendButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.sendMessage(phoneTextField.getText(),
+                        senderTextField.getText(),
+                        msgTextArea.getText());
+            }
+        });
     }
 }

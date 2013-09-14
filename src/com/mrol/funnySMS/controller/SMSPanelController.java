@@ -1,9 +1,11 @@
 package com.mrol.funnySMS.controller;
 
+import com.mrol.funnySMS.model.Message;
 import com.mrol.funnySMS.swing.SMSPanel;
 import com.mrol.funnySMS.swing.View;
 
 import javax.swing.*;
+import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,5 +26,15 @@ public class SMSPanelController {
         frame.setVisible(true);
         frame.setBounds(400, 400, 250, 210);
 
+    }
+
+    public void sendMessage(String phone, String sender, String message){
+        Message msg = new Message(phone, sender, message);
+        HTTPSender httpSender = new HTTPSender();
+        try {
+            httpSender.sendMessage(msg);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
