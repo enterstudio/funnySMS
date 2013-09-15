@@ -45,9 +45,12 @@ public class Message {
         this.message = message;
     }
 
-//    public String getRequest(){
-//        String request = "'sms_phone' : sms_phone,'sms_sender' : sms_sender,'sms_msg' : sms_msg,'sms_send.x' : '23','sms_send.y' : '10'";
-//    }
+    public String getRequest(){
+        String request = "sms_phone=" + phone +
+                "&sms_sender=" + sender +
+                "&sms_msg=" + message ;
+        return request;
+    }
 
 
 
